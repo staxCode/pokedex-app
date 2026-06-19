@@ -1,6 +1,6 @@
 import type { Pokemon } from '../types'
 
-const BASE_URL = 'https://pokeapi.co/api/v2'
+export const BASE_URL = 'https://pokeapi.co/api/v2'
 
 export interface ApiPokemonResponse {
   id: number
@@ -48,4 +48,12 @@ export async function fetchPokemonById(id: number, signal?: AbortSignal): Promis
   if (!res.ok) throw new Error(`Error al cargar pokémon ${id}`)
   const data: ApiPokemonResponse = await res.json()
   return normalizePokemon(data)
+}
+
+export async function fetchPokemonByIds(ids: number[], signal?: AbortSignal): Promise<Pokemon[]> {
+  const promises = ids.map((id) =>
+    fetchPokemonById(id, signal).catch(() => null)
+  )
+  const results = await Promise.all(promises)
+  return results.filter((p): p is Pokemon => p !== null)
 }

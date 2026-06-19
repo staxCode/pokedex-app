@@ -12,7 +12,7 @@ import { ListPage } from './features/pokemon-list/ListPage'
 import { DetailPage } from './features/pokemon-detail/DetailPage'
 import { FavoritesPage } from './features/favorites/FavoritesPage'
 import { useEffect, useMemo, useState } from 'react'
-import type { Pokemon, Page } from './shared/types'
+import type { Page } from './shared/types'
 
 export default function App() {
   const {

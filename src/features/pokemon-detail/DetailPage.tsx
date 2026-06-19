@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import type { FC } from 'react'
 import type { Pokemon } from '../../shared/types'
 import { TYPE_COLORS } from '../../shared/constants/typeColors'
-import { fetchDetail } from './api/pokemonDetailApi'
+import { fetchPokemonById } from '../../shared/api/pokemonApi'
 
 interface DetailPageProps {
     pokemon: Pokemon | null
@@ -33,7 +33,7 @@ export const DetailPage: FC<DetailPageProps> = ({
             setIsLoading(true)
             setError(null)
 
-            fetchDetail(pokemonId)
+            fetchPokemonById(pokemonId)
                 .then(setPokemon)
                 .catch((err) => setError((err as Error).message))
                 .finally(() => setIsLoading(false))

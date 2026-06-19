@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { fetchPokemonByIds } from '../api/favoritesApi'
+import { fetchPokemonByIds } from '../../../shared/api/pokemonApi'
 import type { Pokemon } from '../../../shared/types'
 
 interface UseFavoritePokemonReturn {

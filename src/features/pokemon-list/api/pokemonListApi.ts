@@ -1,7 +1,6 @@
-import { normalizePokemon, type ApiPokemonResponse } from '../../../shared/api/pokemonApi'
+import { normalizePokemon, BASE_URL, type ApiPokemonResponse } from '../../../shared/api/pokemonApi'
 import type { Pokemon } from '../../../shared/types'
 
-const BASE_URL = 'https://pokeapi.co/api/v2'
 const PAGE_SIZE = 20
 
 interface PokemonListResponse {
