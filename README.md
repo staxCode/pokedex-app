@@ -1,4 +1,4 @@
-# Pokédex — Scroll Infinito
+# Pokédex
 
 Aplicación para explorar, buscar y guardar pokémon favoritos consumiendo la PokéAPI. Construida con React + TypeScript + Vite bajo una arquitectura **Feature-Based**.
 
